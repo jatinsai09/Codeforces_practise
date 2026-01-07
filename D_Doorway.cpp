@@ -213,20 +213,20 @@ int main() {
             ri = x1;
             for (int j = 0; j < k; j++) {
                ri += lane[j];
-               vp.push_back({ri, li});
+               vp.push_back({li, ri});
                li += lane[j];
             }
         }
 
-        sort(rbegin(vp), rend(vp));
+        sort(begin(vp), end(vp));
 
         ll res = 0;
         for (int i = 0; i < vp.size(); i++) {
-            res = max(res, mnl - max(mxr, vp[i].first));
-            mnl = min(mnl, vp[i].second);
+            res = max(res, min(mnl, vp[i].first) - mxr);
+            mxr = max(mxr, vp[i].second);
         }
         res = max(res, mnl - mxr);
-        
+
         cout << res << nl;
         finished: ;
     }
