@@ -4,7 +4,7 @@ using namespace std;
 
 #define ll long long int
 #define pll pair < ll, ll >
-    #define finish goto finished;
+#define finish goto finished;
 
 #define Max LLONG_Max
 #define MIN LLONG_MIN
@@ -240,3 +240,4 @@ int main() {
         finished: ;
     }
 }
+
